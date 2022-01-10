@@ -1,0 +1,285 @@
+{
+	"info": {
+		"_postman_id": "7f552d2d-6a16-4d47-81e1-5ca4302eb03f",
+		"name": "Spring Security petitions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ALL USERS PETITIONS",
+			"item": [
+				{
+					"name": "localhost:8080/api-security/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDE4MTAzMTEsInVzZXJfbmFtZSI6InBhdWwiLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIiwiUk9MRV9VU0VSIl0sImp0aSI6IjQ5YTAyMmI5LTgyNTYtNDllZi1iNWI5LWMzZWU4ZDFjNDA0NyIsImNsaWVudF9pZCI6ImxvZ2luLWV4YW1wbGUiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.RLQR99mj7UwfnDBzVDWiaGrKxjgxd7O-OTX03lP9UuWmQcXegRIN2M1QdOLWjy1H6noPZrdQVigR1uyDJ5Bt7X1aLWdfq64KZRpA9VwQzlF5KaDE6VPz2QZOJSOshMlbMp0xREWDIJhRg7dhHjrFJDZBCl8-FAOGKlbkvMFZRaQ9xTHtlS8OThT7L9q44N5VNBVMDu-amVo2DkGz6J7cXd2SPmUYYBW6OlIhZzP33m7hB-kuXwseYgRaN_jebndx-B2NVtes5-hjwCf6toFWsEm54Mem4ggSeEWPiSbNqxDgqeT0SpuWhN-FvMOk4UwFWbT6luUsG-Oxtu23Iv2YGA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api-security/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-security",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/api-security",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "login-example",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api-security",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-security"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "ADMIN PETITIONS",
+			"item": [
+				{
+					"name": "localhost:8080/api-security",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDE4MDc4MTIsInVzZXJfbmFtZSI6InNldCIsImF1dGhvcml0aWVzIjpbIlJPTEVfTUFOQUdFUiIsIlJPTEVfQURNSU4iXSwianRpIjoiOWVmYjk0ZjQtY2UzZS00ZmNhLTgxNzEtYTQzMjM3ZTlmNjJhIiwiY2xpZW50X2lkIjoibG9naW4tZXhhbXBsZSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdfQ.I5hKDPrPun5cRmtDVEmoT_HNj1d58cHJU5lCbq2R7dXdh98sxOYzl-vEgYPIYY4ZBUZSRF8NhJJWVfSU72yhdC10dCl5F1_UmrxvifSHMzhexEZS1GS76cOGwvpudKKYpTbvA5D91lbRIU4CllHPLaWsxONaplL4ucWcc_v3O2oVy3zOPbvKpP3Ejehg7VfpdBn-JnRV11RQFMWU4cFO9sIIVGQWbJVd_HjFKdD5BjhNkqb52NUXxv1Rq4H9y6mnKbUMG26etJFfx6Ccdyy_zMUsvjBjZiyQ1paq2c9jQQmzekH8FELXMhtLu0aS834LeJ_e2vGDnuNRyCJKT4t2Ug",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"paul\",\r\n    \"password\": \"12345\",\r\n    \"enabled\": true,\r\n    \"roles\": [1,2]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api-security",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-security"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/api-security/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDE4MDc4MTIsInVzZXJfbmFtZSI6InNldCIsImF1dGhvcml0aWVzIjpbIlJPTEVfTUFOQUdFUiIsIlJPTEVfQURNSU4iXSwianRpIjoiOWVmYjk0ZjQtY2UzZS00ZmNhLTgxNzEtYTQzMjM3ZTlmNjJhIiwiY2xpZW50X2lkIjoibG9naW4tZXhhbXBsZSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdfQ.I5hKDPrPun5cRmtDVEmoT_HNj1d58cHJU5lCbq2R7dXdh98sxOYzl-vEgYPIYY4ZBUZSRF8NhJJWVfSU72yhdC10dCl5F1_UmrxvifSHMzhexEZS1GS76cOGwvpudKKYpTbvA5D91lbRIU4CllHPLaWsxONaplL4ucWcc_v3O2oVy3zOPbvKpP3Ejehg7VfpdBn-JnRV11RQFMWU4cFO9sIIVGQWbJVd_HjFKdD5BjhNkqb52NUXxv1Rq4H9y6mnKbUMG26etJFfx6Ccdyy_zMUsvjBjZiyQ1paq2c9jQQmzekH8FELXMhtLu0aS834LeJ_e2vGDnuNRyCJKT4t2Ug",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"paul\",\r\n    \"password\": \"12345\",\r\n    \"enabled\": true,\r\n    \"roles\": [1,2]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api-security/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-security",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/api-security/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDE4MDc4MTIsInVzZXJfbmFtZSI6InNldCIsImF1dGhvcml0aWVzIjpbIlJPTEVfTUFOQUdFUiIsIlJPTEVfQURNSU4iXSwianRpIjoiOWVmYjk0ZjQtY2UzZS00ZmNhLTgxNzEtYTQzMjM3ZTlmNjJhIiwiY2xpZW50X2lkIjoibG9naW4tZXhhbXBsZSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdfQ.I5hKDPrPun5cRmtDVEmoT_HNj1d58cHJU5lCbq2R7dXdh98sxOYzl-vEgYPIYY4ZBUZSRF8NhJJWVfSU72yhdC10dCl5F1_UmrxvifSHMzhexEZS1GS76cOGwvpudKKYpTbvA5D91lbRIU4CllHPLaWsxONaplL4ucWcc_v3O2oVy3zOPbvKpP3Ejehg7VfpdBn-JnRV11RQFMWU4cFO9sIIVGQWbJVd_HjFKdD5BjhNkqb52NUXxv1Rq4H9y6mnKbUMG26etJFfx6Ccdyy_zMUsvjBjZiyQ1paq2c9jQQmzekH8FELXMhtLu0aS834LeJ_e2vGDnuNRyCJKT4t2Ug",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api-security/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-security",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "localhost:8080/oauth/token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "login-example",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "set",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/oauth/token",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
